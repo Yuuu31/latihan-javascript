@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>kalkulator sederhana</title>
+    </head>
+    <body>
+        <div>
+            <input type="number" id="angka1" placeholder="angka1">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" id="angka2" placeholder="angka2">
+            <span>=</span>
+            <span id="hasil">hasil</span><br><br>
+            <button id="submit">submit</button>
+        </div>
+
+        <script>
+            const angka1 = document.getElementById("angka1")
+            const angka2 = document.getElementById("angka2")
+            const operator = document.getElementById("operator")
+            const hasil = document.getElementById("hasil")
+            const submit = document.getElementById("submit")
+
+            submit.addEventListener('click',function (){
+                hasil.innerText = eval(angka1.value + operator.value + angka2.value)
+            })
+
+
+
+
+        </script>
+        
+        
+    </body>
+</html>
