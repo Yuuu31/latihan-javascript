@@ -1,21 +1,8 @@
-const express = require('express');
-const route = express.Router();
-const app = express();
-const port = 3000;
-const users = require('./UserControllers')
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(route);
+var fs = require ('fs');
 
-app.get('/',(req,res)=>{
-    res.send("Selamat datang di sini!")
+fs.readFile('./data.json','utf-8',function(err,data){
+    if(err)throw err;
+    console.log(JSON.parse(data));
 });
 
-app.get('/user',users.GetUser);
-app.post('/user',users.CreateUser);
-app.put('/user/:id',users.EditUser);
-app.delete('/user/:id',users.DeleteUser)
-
-app.listen(port,()=>{
-    console.log(`listening on ${port}`)
-});
+console.log("selanjutnya......");
